@@ -1,333 +1,223 @@
-## Задачи
 
-1. Напишете програма на C++, която извежда следния текст на екрана:   
+TASK 1
+
+#include <iostream>
+using namespace std;
+int main() {
+    double starting_sum,interest,years,final_amount ;
+    cout << " Please enter thestarting sum ";
+    cin >> starting_sum;
+
+    cout << "Please enter the interest";
+    cin >> interest;
+
+    cout << "Please enter the years";
+    cin >> years;
+
+    final_amount = starting_sum * (1 + interest/100 * years);
+   
+    cout << "The full amount after "<< years << "years is :"<<final_amount<< "leva"<<endl;
+}
+
+TASK2
+#include <iostream>
+#include <cmath> 
+using namespace std;
+
+int main() {
+    double t, h, td;
+
+    cout << "Please enter the temperature : ";
+    cin >> t;
+
+    cout << "Please enter the relative humidity:   ";
+    cin >> h;
+
+    td = t - ((100 - h) / 5.0);
+
+    cout << "Dew point: " << td << endl;
+
     
-```c++
-Oh what
-a happy day!
-Oh yes,
-what a happy day!
-```
-
-2. Да се напише програма, която изчислява периметъра и лицето на правоъгълник със страни 5,4 и 7,9.
-
-3. Да се напише програма, която чете от конзолата дадена сума в лева и ги превръща в долари и в евра.
-
-4. Напишете програма, която подканя потребителя да въведе дължините на двете страни на правоъгълник, <br />
-   **като му извежда съобщение, например "Please enter the length of the first side:"**. <br />
-   Програмата да изведе периметърът и лицето на този правоъгълник. <br />
-   **Страните може да не са цели числа!** <br />
-
-5. При дадени произволни 3 числа въведени от конзолата изкарайте дали са във възходящ ред. Пример:
-5 10 12     5 < 10 < 12 true 
-5 4 3       5 < 4 < 3 false
-
-6. Да се напише програма, която чете от конзолата 2 числа и отпечатва остатъка и частното при делението им.<br />
-
-**Пример:** <br />
-Вход:
-```c++
-Dividend: 25
-Divisor: 3
-```
-Изход:
-```c++
-The quotient of the division is : 8
-The remainder of the division is : 1
-```
-
-7. Пешо отива на пазар за плодове – ябълки, круши и банани. Помогнете на майка му да генерира автоматично съобщение, с което да му напомни колко от всеки плод трябва да купи.<br />
-
-**Пример:**<br />
-Вход:
-```c++
-Apples: 5
-Pears: 6
-Bananas: 3
-```
-Изход: 
-```c++
-Pesho, don’t forget to buy 5 apples, 6 pears and 3 bananas!
-```
-            
-8. Да се напише програма, която:                    
-   А) Потребителят въвежда радиус на окръжност;           
-   Б) Програмата изчислява дължината на окръжността;                     
-   В) Програмата изчислява лицето на окръжността при зададения радиус(PI = 3,14159265). <br />      
-       
-9. Да се въведат от конзолата коефициенти за квадратното уравнение ax2 + bx + c. Да се намерят корените на уравнението.<br />
-**Mоже да се използва <cmath> (math.h) sqrt** <br />
-             
-**Пример:**<br />
-Вход:
-```c++
-a = 1;
-b = -5;
-c = 6;
-```
-Изход: 
-```c++
-x1 = 2, x2 = 3
-```
+}
 
-10. Напишете програма, която разменя стойностите на две числови променливи.                     
+TASK 3
 
-11. Напишете програма, която намира минималното (максималното) от две цели числа.       
+#include <iostream>
+#include <math.h>
 
-12. Да се напише програма, която чете от конзолата брой секунди и изчислява колко дни, часове, минути и секунди са.<br />
+using namespace std;
 
-**Пример:**<br />
-Вход:
-```c++
-Seconds: 533628
-```
-Изход:
-```c++
-6 days, 4 hours, 13 minutes and 48 seconds
-```
-                 
-13. При подадени две числа в конзолата проверете дали едното е по-голямо от другото и обратно, ако са равни да изкара false. Пример:
-3 4    3 < 4  3 > 4   true
-3 3    3 < 3  3 > 3   false                
-                               
-14. Напишете програма която приема номер на кредитна карта(16 цифри). <br />
-    Програмата да изведе същият този номер, но със скрити първите 12 цифри (XXXXXXXXXXXX1234).
+int main()
+{
+    double a,s,t;
+    cout << "Please enter the acceleration : ";
+    cin >> a ;
+
+    cout << "Please enter the target distance :";
+    cin >> s;
+     
+    t = sqrt((2 * s) / a );
+
+    cout << " the time is :  " << t << endl;
+
+    
+}
+
+TASK 4
+#include <iostream>
+using namespace std;
+
+int main() {
+    double Q,m,Q_kJ;
+    cout <<"please enter the mass ";
+    cin >>m;
+    const double λ = 334000;
+
+    Q = λ * m;
+    Q_kJ = Q / 1000; 
+
+    cout << " The required heat is: " << Q << " J = " << Q_kJ << " kJ" << endl;
+
+   
+}
+
+TASK 5
+#include <iostream>
+using namespace std;
+
+int main() {
+  double euro,leva,leva_after_fees,exchange_rate;
+  cout << "please enter the amount in euro";
+  cin >> euro;
+
+  cout << " please enter the exchange rate ";
+  cin >> exchange_rate;
+
+  leva = euro *  exchange_rate;
 
-Допълнителни задачи
+  leva_after_fees = leva * 0.98;
 
-1. Банков депозит с лихва
+  cout << "The in leva is :" << leva << "leva" << endl;
+  cout << "After 2% exchange rate you will recive: " << leva_after_fees << "leva"<< endl;
 
-Условие:
-Клиент влага пари в банка при годишна лихва.
-Въведете:
+ 
 
-начална сума
+}
+
+TASK 6
+#include <iostream>
+#include <cmath>
+using namespace std;
 
-годишен процент лихва
+int main(){
+    const double R = 6371.0;
+    const double PI = 3.14;
+    double D,width,lenght;
+    cout << "Please enter the width: ";
+    cin >> width;
+    cout << "Please enter the lenght: ";
+    cin >> lenght;
+    D = 2 * R * sin((width - lenght)/2);
+    cout << "the approximate distance is: " << D << "km" << endl;
+    
 
-брой години
+  
+}
+TASK7
+#include <iostream>
+using namespace std;
 
-Изчислете и изведете:
+int main() {
+  double U,R,I,P;
 
-крайната сума след зададения брой години (лихвата се начислява веднъж годишно, без капитализация по месеци).
-Формула:
+  cout << "Please enter the voltage: ";
+  cin >> U;
+  cout << " Please enter the resistence: ";
+  cin >> R;
 
-Крайна сума = нач_сума * (1 + лихва/100 * години)
+  I = U / R;
+  P = U * I;
 
+  cout << "The current is : " << I << "A "<< endl;
+  cout << "The power is : " << P << "W" << endl;
+  
+  
+}
+TASK 8 
+#include <iostream>
+using namespace std;
 
-Пример:
+int main(){
+   const double density = 2400.0;
+   double length,width,height;
+   double volume,mass_of_the_block,weight;
+   
+   cout << "Please enter the lenght: ";
+   cin >> length;
 
-Вход:
-1000 3.5 5
+   cout << "Please enter the width: ";
+   cin >> width;
 
-Изход:
-Крайна сума: 1175.00
+   cout << "Please enter the height : ";
+   cin >> height;
+   volume = length * width * height;
+   mass_of_the_block = volume * density;
+   weight = mass_of_the_block * 9.81; 
 
-2. Температура на въздуха и точка на оросяване
+   cout << "The volume is : " << volume << endl;
+   cout << " The mass is : " << mass_of_the_block << endl;
+   cout << "The weight is : " << weight << endl;
+   
+}
+TASK 9
+#include <iostream>
+using namespace std;
 
-Условие:
-В метеорологията точката на оросяване (dew point) може да се изчисли с приближена формула:
+int main() 
+{
+    double km,time,speed_in_kmh;
 
-Td = T - ((100 - H) / 5)
+    cout << "Please enter the kilometers traveled: ";
+    cin >> km;
 
+    cout << "Plese enter the time for the trip: ";
+    cin >> time;
+   
+    speed_in_kmh = km/time;
 
-където:
+    cout << "the avarage speed is : " << speed_in_kmh << endl;
 
-T – температура в °C
+    
+    
 
-H – относителна влажност (%)
 
-Въведете T и H, и изведете Td с две цифри след десетичната запетая.
+}
 
-Пример:
 
-Вход:
-25 60
-Изход:
-Точка на оросяване: 17.00 °C
+TASK 10
+#include <iostream>
+using namespace std;
 
-3. Време за достигане на цел
+int main() {
+ double price_for_one_product,number_of_products,price_for_manifacture;
+ double profit,profitability;
+ 
+ cout <<" Please enter the price";
 
-Условие:
-Ракета стартира от покой и ускорява равномерно с ускорение a (в m/s²).
-Въведете:
+ cin >> price_for_one_product;
 
-ускорение a
+ cout << "Please enter the number";
+ cin >> number_of_products;
 
-целево разстояние s
+ cout << " Please enter the price for manifacture";
+ cin >> price_for_manifacture;
 
-Изчислете времето t, за което ще измине това разстояние, като използвате формулата:
+ profit =  price_for_one_product * number_of_products - price_for_manifacture;
+ profitability = (profit/price_for_manifacture)*100;
+ 
+ cout << "The profit is : " << profit << endl;
+ cout << "The profitability is : " << profitability << endl;
 
-s = (a * t²) / 2  →  t = sqrt(2 * s / a)
 
 
-Пример:
-
-Вход:
-a = 5, s = 100
-Изход:
-Време: 6.32 секунди
-
-4. Преобразуване на енергия при топене
-
-Условие:
-За да се разтопи лед с маса m (в kg), е нужна топлина:
-
-Q = λ * m
-
-
-където λ = 334000 J/kg (латентна топлина на топене).
-Въведете масата на леда и изчислете енергията, нужна за топенето му в:
-
-джаули (J)
-
-килоджаули (kJ)
-
-Пример:
-
-Вход:
-m = 0.5
-Изход:
-Q = 167000 J = 167.0 kJ
-
-5. Обмяна на валута
-
-Условие:
-Потребител въвежда сума в евро и курс на обмен.
-Изчислете и изведете:
-
-сумата в лева
-
-колко лева ще получи след 2% такса обмен
-
-Пример:
-
-Вход:
-100 1.95583
-Изход:
-Без такса: 195.583
-След такса: 191.671
-
-6. Разстояние между две точки (географски координати)
-
-Условие:
-Въведете координатите на две точки на земята — ширини и дължини в градуси.
-Използвайте формулата на хордата (за опростяване):
-
-D = 2 * R * sin(Δ/2)
-
-
-където
-Δ = ъгловата разлика между точките в радиани,
-R = 6371 km (радиус на Земята).
-
-Подсказка: използвайте sin() и преобразувайте градусите в радиани.
-
-7. Изчисляване на електрическа мощност
-
-Условие:
-Въведете напрежение (U) и съпротивление (R).
-Изчислете тока и мощността:
-
-I = U / R  
-P = U * I
-
-
-Пример:
-
-Вход:
-U = 220, R = 100
-Изход:
-I = 2.2 A
-P = 484.0 W
-
-8. Изчисляване на тегло на бетонен блок
-
-Условие:
-Бетонът има плътност 2400 kg/m³.
-Въведете:
-
-дължина, ширина и височина (в метри)
-Изчислете:
-
-обем
-
-маса на блока
-
-тежест в нютони (G = m * 9.81)
-
- 9. Средна скорост при пътуване
-
-Условие:
-Въведете изминато разстояние (в км) и време (в часове и минути като десетично число).
-Изчислете средната скорост в km/h и m/s.
-
-10. Проста икономическа сметка
-
-Условие:
-Фирма произвежда продукт с единична цена c и продава n броя.
-Въведете:
-
-цена на един продукт
-
-брой продадени
-
-разходи за производство
-
-Изчислете печалбата и рентабилността:
-
-Печалба = n * c - разходи  
-Рентабилност (%) = (печалба / разходи) * 100
-
-
-ПО-ТРУДНА
-Задача: Енергийна консумация и сметка за ток в дома
-Условие:
-
-Да се напише програма, която пресмята общата месечна сметка за електроенергия на домакинство.
-
-Домът има следните уреди:
-
-Хладилник
-
-Пералня
-
-Телевизор
-
-Компютър
-
-Осветление
-
-Потребителят въвежда за всеки уред:
-
-мощност (във ватове, W)
-
-брой часове работа на ден
-
-Програмата трябва да изчисли:
-
-Енергията, консумирана за ден (в киловатчасове) от всеки уред
-
-E_ден = (мощност * часове) / 1000
-
-
-Енергията за месец (30 дни).
-
-E_месец = E_ден * 30
-
-
-Общата консумация на всички уреди за месец.
-
-Общата сума за плащане, ако 1 kWh струва 0.25 лв.
-
-Среднодневната консумация.
-
-Процентно участие на всеки уред в общата консумация (в %).
-
-Изведете всичко красиво подредено.
-
-Подсказки:
-
-Използвай double навсякъде.
-
-Форматирай изхода с текст, за да изглежда отчетно.
+}
